@@ -5,7 +5,7 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(current_dir)
 
-from main import count_safe_lists, parse_data
+from solution import count_safe_lists, parse_data
 
 class TestAdventDay2(unittest.TestCase):
     def setUp(self):
@@ -19,5 +19,10 @@ class TestAdventDay2(unittest.TestCase):
         result = count_safe_lists(self.data, 1)
         self.assertEqual(result, 4, "Part 2 should return 4")
 
+def main():
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestAdventDay2)
+    runner = unittest.TextTestRunner(verbosity=2)
+    runner.run(suite)
+
 if __name__ == '__main__':
-    unittest.main() 
+    main() 
