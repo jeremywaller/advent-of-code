@@ -7,7 +7,7 @@ This repository contains my solutions for the [Advent of Code 2024](https://adve
 Each day's solution is in its own directory, numbered 1-24. Each directory contains:
 - `main.py`: The solution code
 - `input.txt`: The puzzle input
-- `tests.py`: The test code
+- `test.py`: The test code
 - `test_input.txt`: The puzzle input for the test
 
 ## Setup
