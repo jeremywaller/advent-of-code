@@ -1,22 +1,24 @@
-# Advent of Code 2024
+# Advent of Code Solutions
 
-This repository contains my solutions for the [Advent of Code 2024](https://adventofcode.com/2024) challenges.
+This repository contains my solutions for [Advent of Code](https://adventofcode.com/), an annual series of programming puzzles that begin on December 1st and continue until December 25th.
 
-## Structure
+## Repository Structure
 
-Each day's solution is in its own directory, numbered 1-24. Each directory contains:
-- `main.py`: The solution code
-- `input.txt`: The puzzle input
+Each year's solutions are organized in their own directory:
 
-## Running Solutions
-
-To run a specific day's solution:
-
-```bash
-cd {day_number}
-python main.py
+```
+.
+└── YYYY/         # Solutions for specific year (e.g., 2024/)
 ```
 
-## Requirements
+## Years
 
-- Python 3.x 
+- [2024](./2024) - Python solutions
+
+## About Advent of Code
+
+Advent of Code is an annual set of Christmas-themed programming challenges that follow an advent calendar. Each day, a new two-part programming puzzle is released. These puzzles can be solved in any programming language and provide an excellent opportunity to practice problem-solving skills and learn new programming concepts.
+
+## License
+
+This project is open source and available under the MIT License. 
