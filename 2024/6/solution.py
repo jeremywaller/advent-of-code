@@ -88,15 +88,73 @@ def count_visited_cells(matrix):
 def find_guard_route(matrix):
     guard_position = find_guard_in_matrix(matrix)
     move_guard(matrix, guard_position)
-    
+
     return count_visited_cells(matrix)
+
+def find_visited_cells(matrix):
+    visited_cells = set()
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if matrix[i][j] == VISITED:
+                visited_cells.add((i, j))
+    return visited_cells
+
+def test_blocker_position(original_matrix, blocker_pos):
+    matrix = [row[:] for row in original_matrix]
+    matrix[blocker_pos[0]][blocker_pos[1]] = BLOCKED
+    
+    guard_position = find_guard_in_matrix(matrix)
+    if guard_position is None:
+        return False
+        
+    visited_states = set()
+    while guard_position is not None:
+        current_state = (guard_position, matrix[guard_position[0]][guard_position[1]])
+        if current_state in visited_states:
+            return True
+        visited_states.add(current_state)
+        
+        next_pos = move_forward(matrix, guard_position)
+        if next_pos is not None:
+            guard_position = next_pos
+            continue
+            
+        guard_position = find_guard_in_matrix(matrix)
+        if guard_position is None:
+            return False
+        rotate_direction(matrix, guard_position)
+        
+    return False
+
+def count_successful_blockers(matrix):
+    guard_position = find_guard_in_matrix(matrix)
+    matrix_copy = [row[:] for row in matrix]
+    move_guard(matrix_copy, guard_position)
+    visited_cells = find_visited_cells(matrix_copy)
+    
+    successful_blockers = 0
+    total_cells = len(visited_cells)
+    for i, cell in enumerate(visited_cells, 1):
+        if test_blocker_position(matrix, cell):
+            successful_blockers += 1
+        if i % 10 == 0:
+            print(f"Progress: {i}/{total_cells} cells checked. Found {successful_blockers} successful blockers so far.")
+            
+    return successful_blockers
 
 def main():
     data = parse_data("6/input.txt")
     data_as_matrix, _, _ = parse_data_as_matrix(data)
-    guard_position = find_guard_in_matrix(data_as_matrix)
-    move_guard(data_as_matrix, guard_position)
-    print(f"Part 1: {count_visited_cells(data_as_matrix)}")
+    
+    # Part 1
+    matrix_copy = [row[:] for row in data_as_matrix]
+    guard_position = find_guard_in_matrix(matrix_copy)
+    move_guard(matrix_copy, guard_position)
+    print(f"Part 1: {count_visited_cells(matrix_copy)}")
+    
+    # Part 2
+    successful_blockers = count_successful_blockers(data_as_matrix)
+    print(f"Part 2: {successful_blockers}")
 
 if __name__ == "__main__":
     main()
