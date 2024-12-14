@@ -66,7 +66,7 @@ def get_result(input_string, enforce_do_instructions=False):
     return perform_mul_instructions(mul_instructions)
 
 def main():
-    data = parse_data("3/input.txt")
+    data = parse_data("03/input.txt")
     print(f'Part 1: {get_result(data)}')
     print(f'Part 2: {get_result(data, enforce_do_instructions=True)}')
 

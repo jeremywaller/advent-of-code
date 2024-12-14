@@ -49,7 +49,7 @@ def get_middle_pages_for_sorted_updates(update_rules, updates):
     return sum(middle_pages_correctly_sorted), sum(middle_pages_incorrectly_sorted)
 
 def main():
-    update_rules, updates = parse_data("5/input.txt")
+    update_rules, updates = parse_data("05/input.txt")
     correctly_sorted_sum, incorrectly_sorted_sum = get_middle_pages_for_sorted_updates(update_rules, updates)
     print(f"Sum of middle pages correctly sorted: {correctly_sorted_sum}")
     print(f"Sum of middle pages incorrectly sorted: {incorrectly_sorted_sum}")

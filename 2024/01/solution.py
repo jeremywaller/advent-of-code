@@ -35,7 +35,7 @@ def puzzle_part_2(data):
     return result
 
 def main():
-    data = parse_data("1/input.txt")
+    data = parse_data("01/input.txt")
     puzzle_part_1(data)
     puzzle_part_2(data)
 

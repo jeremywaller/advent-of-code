@@ -80,7 +80,7 @@ def count_antinodes_withing_grid(grid, locations):
     return count
 
 def main():
-    grid = parse_data("8/input.txt")
+    grid = parse_data("08/input.txt")
     max_range = calculate_max_range(grid)
     print(f"Max range: {max_range}")
     antennas = get_coordinates_of_antennas(grid)

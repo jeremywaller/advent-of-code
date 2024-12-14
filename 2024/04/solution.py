@@ -80,7 +80,7 @@ def out_of_bounds(grid, i, j, direction, length):
     return i + direction[0] * length < 0 or i + direction[0] * length >= len(grid) or j + direction[1] * length < 0 or j + direction[1] * length >= len(grid[0])
 
 def main():
-    data = parse_data("4/input.txt")
+    data = parse_data("04/input.txt")
     data_grid = [list(row) for row in data]
     print(search_grid_for_word(data_grid))
     print(search_word_in_x_shape(data_grid))

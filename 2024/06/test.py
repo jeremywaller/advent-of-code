@@ -4,7 +4,7 @@ from solution import parse_data, move_guard, count_visited_cells, parse_data_as_
 
 class TestAdventDay6(unittest.TestCase):
     def test_count_visited_cells(self):
-        data = parse_data("6/test_input.txt")
+        data = parse_data("06/test_input.txt")
         data_as_matrix, matrix_height, matrix_width = parse_data_as_matrix(data)
         guard_position = find_guard_in_matrix(data_as_matrix)
         move_guard(data_as_matrix, guard_position)
@@ -12,7 +12,7 @@ class TestAdventDay6(unittest.TestCase):
         self.assertEqual(result, 41, "Count of visited cells should be 41")
         
     def test_part2_successful_blockers(self):
-        data = parse_data("6/test_input.txt")
+        data = parse_data("06/test_input.txt")
         data_as_matrix, _, _ = parse_data_as_matrix(data)
         
         # Test Part 2

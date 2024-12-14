@@ -34,7 +34,7 @@ def count_safe_lists(data, remove_bad_levels=False):
     return sum(1 for line in data if is_safe(line, remove_bad_levels))
 
 def main():
-    data = parse_data("2/input.txt")
+    data = parse_data("02/input.txt")
     print(f'Part 1: {count_safe_lists(data)}')
     print(f'Part 2: {count_safe_lists(data, True)}')
 

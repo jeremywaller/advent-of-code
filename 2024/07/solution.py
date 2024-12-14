@@ -29,7 +29,7 @@ def evaluate_equation(answer, equation, include_concat=False):
     return False
 
 def main():
-    data = parse_data("7/input.txt")
+    data = parse_data("07/input.txt")
     total = len(data)
     part1_results = sum(item["answer"] for item in data if evaluate_equation(item["answer"], item["equation"]))
     part2_results = sum(item["answer"] for item in data if evaluate_equation(item["answer"], item["equation"], True))

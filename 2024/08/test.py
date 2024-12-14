@@ -11,7 +11,7 @@ class TestAdventDay8(unittest.TestCase):
         ]
         
     def test_parse_data(self):
-        grid = parse_data("8/test_input.txt")
+        grid = parse_data("08/test_input.txt")
         self.assertIsInstance(grid, list)
         self.assertIsInstance(grid[0], list)
         
@@ -40,7 +40,7 @@ class TestAdventDay8(unittest.TestCase):
         self.assertEqual(len(locations), 2)
         
     def test_count_antinodes_full_workflow(self):
-        grid = parse_data("8/test_input.txt")
+        grid = parse_data("08/test_input.txt")
         max_range = (len(grid), len(grid[0]))
         antennas = get_coordinates_of_antennas(grid)
         antinode_locations = calculate_antinodes_distances(antennas)
@@ -49,7 +49,7 @@ class TestAdventDay8(unittest.TestCase):
         self.assertEqual(count, 14, "Expected 14 antinodes within the grid")
         
     def test_count_antinodes_with_resonance(self):
-        grid = parse_data("8/test_input.txt")
+        grid = parse_data("08/test_input.txt")
         max_range = (len(grid), len(grid[0]))
         antennas = get_coordinates_of_antennas(grid)
         antinode_locations = calculate_antinodes_distances(antennas)

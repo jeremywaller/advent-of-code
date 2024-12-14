@@ -143,7 +143,7 @@ def count_successful_blockers(matrix):
     return successful_blockers
 
 def main():
-    data = parse_data("6/input.txt")
+    data = parse_data("06/input.txt")
     data_as_matrix, _, _ = parse_data_as_matrix(data)
     
     # Part 1
