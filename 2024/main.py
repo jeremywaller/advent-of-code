@@ -24,8 +24,8 @@ def load_day_module(day, is_test=False):
 
 def main():
     parser = argparse.ArgumentParser(description='Run different day solutions for the challenge.')
-    parser.add_argument('--day', type=int, choices=range(1, 10), required=True,
-                       help='The day number to run (1 - 9)')
+    parser.add_argument('--day', type=int, choices=range(1, 11), required=True,
+                       help='The day number to run (1 - 10)')
     parser.add_argument('--test', action='store_true',
                        help='Run tests instead of the main solution')
     
